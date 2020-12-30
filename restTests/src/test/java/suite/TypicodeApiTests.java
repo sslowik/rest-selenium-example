@@ -7,6 +7,8 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pojo.Post;
@@ -58,35 +60,47 @@ public class TypicodeApiTests {
     }
 
     /**
-     * GET	/posts
-     * GET	/posts/1
-     * GET	/posts/1/comments
-     * GET	/comments?postId=1
-     * POST	/posts
-     * PUT	/posts/1
-     * PATCH	/posts/1
-     * DELETE	/posts/1
+     * TC1:  GET	/posts
+     * TC2: GET	/posts/1
+     * TC3: GET	/posts/1/comments
+     * TC4: GET	/comments?postId=1
+     * TC5: POST	/posts
+     * TC6: PUT	/posts/1
+     * TC7: PATCH	/posts/1
+     * TC8: DELETE	/posts/1
      */
     @Test
-    public void getPostsTest() {
-        Response response = getResponse("/posts");
+    public void TC1_getPostsTest() {
+        Response res = getResponse("/posts");
 
-        ResponseBody postsBody = response.getBody();
-//        System.out.println("Posts body = " + postsBody.asString());
-        List<String> userIds = response.jsonPath().getList("id");
-        System.out.println(userIds.size());
-        System.out.println("List of userIds = " + userIds.toString());
-        posts = Arrays.asList(response.getBody().as(Post[].class));
+        ResponseBody postsBody = res.getBody();
+        List<String> userIds = res.jsonPath().getList("id");
+        Reporter.log("User id size: "+ userIds.size());
+        Reporter.log("List of userIds = " + userIds.toString());
+        posts = Arrays.asList(res.getBody().as(Post[].class));
     }
 
-//    @Test(priority = 2, dependsOnMethods = "getPostsTest")
-    void mapResponseTest() {
-        Response response = getResponse(baseUrl + "users/1");
-        Map<String, String> company = response.jsonPath().getMap("company");
-        System.out.println("company.size() = " + company.size() + "\n");
-        company.forEach((k, v) -> System.out.println("key: = " + k + " / value: = " + v));
-        String name = company.get("name");
-        System.out.println("\nname = " + name);
+    @Test
+    public void TC2_getFirstPostTest() {
+        Response res = getResponse("/posts/1");
+        res.then().assertThat().statusCode(200);
+        Reporter.log("PASS -> response code is 200.", 1, true);
+        ResponseBody postsBody = res.getBody();
+        logger.info("Posts body = " + postsBody.asString());
+        String userId = res.jsonPath().getString("id");
+        logger.info("userId = " + userId);
+        Post firstPost = res.getBody().as(Post.class);
+        Assert.assertEquals(firstPost.getId(), "1");
+    }
+
+    @Test
+    public void TC3_getFirstPostComments() {
+        Response res = getResponse("/posts/1/comments");
+        ResponseBody postsBody = res.getBody();
+        List<String> userIds = res.jsonPath().getList("id");
+        Reporter.log("User id size: "+ userIds.size());
+        Reporter.log("List of userIds = " + userIds.toString());
+        posts = Arrays.asList(res.getBody().as(Post[].class));
     }
 
     @Test
