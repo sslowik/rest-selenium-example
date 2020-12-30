@@ -6,6 +6,7 @@ import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
+import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pojo.Post;
@@ -14,7 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class ApiTests {
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
+
+public class TypicodeApiTests {
+
+    static Logger logger = Logger.getLogger(TypicodeApiTests.class);
 
     final String baseUrl = "https://jsonplaceholder.typicode.com";
 
@@ -32,7 +38,7 @@ public class ApiTests {
 
     private static Response getResponse(String path) {
         RestAssured.defaultParser = Parser.JSON;
-        RequestSpecification req = RestAssured.given()
+        RequestSpecification req = given()
                 .basePath(path)
                 .headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON);
         Response res = req.when().get()
@@ -42,7 +48,7 @@ public class ApiTests {
 
     private static Response getResponseAndCheckCode(String path, int expectedCode) {
         RestAssured.defaultParser = Parser.JSON;
-        RequestSpecification req = RestAssured.given()
+        RequestSpecification req = given()
                 .basePath(path)
                 .headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON);
         Response res = req.when().get()
@@ -73,7 +79,7 @@ public class ApiTests {
         posts = Arrays.asList(response.getBody().as(Post[].class));
     }
 
-    @Test(priority = 2, dependsOnMethods = "getPostsTest")
+//    @Test(priority = 2, dependsOnMethods = "getPostsTest")
     void mapResponseTest() {
         Response response = getResponse(baseUrl + "users/1");
         Map<String, String> company = response.jsonPath().getMap("company");
@@ -81,6 +87,15 @@ public class ApiTests {
         company.forEach((k, v) -> System.out.println("key: = " + k + " / value: = " + v));
         String name = company.get("name");
         System.out.println("\nname = " + name);
+    }
+
+    @Test
+    void createPostTest() {
+        Post post = new Post("11", "101", "new comment", "per aspera ad astra");
+        logger.info("PASS -> Created new post: " + post.toString());
+        given().body(post)
+                .when().post("/posts")
+                .then().assertThat().statusCode(201);
     }
 
     @Test(priority = 2, dependsOnMethods = "getPostsTest", enabled = false)
