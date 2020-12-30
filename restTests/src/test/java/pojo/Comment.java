@@ -59,4 +59,14 @@ public class Comment {
         mPostId = postId;
     }
 
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "mBody='" + mBody + '\'' +
+                ", mEmail='" + mEmail + '\'' +
+                ", mId=" + mId +
+                ", mName='" + mName + '\'' +
+                ", mPostId=" + mPostId +
+                '}';
+    }
 }

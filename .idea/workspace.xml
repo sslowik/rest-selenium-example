@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f73db2d8-ff0d-44fc-853b-4801a7d4b6dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restTests/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/restTests/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restTests/src/test/java/pojo/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/restTests/src/test/java/pojo/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restTests/src/test/java/pojo/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/restTests/src/test/java/pojo/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restTests/src/test/java/suite/TypicodeApiTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/restTests/src/test/java/suite/TypicodeApiTests.java" afterDir="false" />
     </list>
@@ -31,8 +31,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="sslowik-baseUItest" />
-                    <option name="lastUsedInstant" value="1609336556" />
+                    <option name="branchName" value="sslowik-restTests" />
+                    <option name="lastUsedInstant" value="1609360855" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -73,7 +73,7 @@
       <recent name="C:\pl.prov-test-project\seleniumTests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TypicodeApiTests.TC2_getFirstPostTest">
+  <component name="RunManager" selected="TestNG.TypicodeApiTests.TC6_putToFirstPostTest (1)">
     <configuration name="AddItemsTest.addItemsToBasket" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="seleniumTests" />
       <option name="PACKAGE_NAME" value="" />
@@ -86,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TypicodeApiTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TypicodeApiTests.TC6_putToFirstPostTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="restTests" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -98,9 +98,9 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="suite" />
       <option name="MAIN_CLASS_NAME" value="suite.TypicodeApiTests" />
-      <option name="METHOD_NAME" value="" />
+      <option name="METHOD_NAME" value="TC6_putToFirstPostTest" />
       <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
@@ -114,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TypicodeApiTests.TC2_getFirstPostTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TypicodeApiTests.TC7_patchFirstPostTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="restTests" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -126,7 +126,91 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="suite" />
       <option name="MAIN_CLASS_NAME" value="suite.TypicodeApiTests" />
-      <option name="METHOD_NAME" value="TC2_getFirstPostTest" />
+      <option name="METHOD_NAME" value="TC7_patchFirstPostTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TypicodeApiTests.TC7_patchFirstPostTest (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="restTests" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="suite" />
+      <option name="MAIN_CLASS_NAME" value="suite.TypicodeApiTests" />
+      <option name="METHOD_NAME" value="TC7_patchFirstPostTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TypicodeApiTests.TC7_patchFirstPostTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="restTests" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="suite" />
+      <option name="MAIN_CLASS_NAME" value="suite.TypicodeApiTests" />
+      <option name="METHOD_NAME" value="TC7_patchFirstPostTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TypicodeApiTests.TC8_deleteFirstPostTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="restTests" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="suite" />
+      <option name="MAIN_CLASS_NAME" value="suite.TypicodeApiTests" />
+      <option name="METHOD_NAME" value="TC8_deleteFirstPostTest" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
@@ -193,9 +277,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TypicodeApiTests.TC2_getFirstPostTest" />
-        <item itemvalue="TestNG.TypicodeApiTests" />
-        <item itemvalue="TestNG.TypicodeApiTests.createPostTest" />
+        <item itemvalue="TestNG.TypicodeApiTests.TC6_putToFirstPostTest (1)" />
+        <item itemvalue="TestNG.TypicodeApiTests.TC7_patchFirstPostTest (2)" />
+        <item itemvalue="TestNG.TypicodeApiTests.TC7_patchFirstPostTest (1)" />
+        <item itemvalue="TestNG.TypicodeApiTests.TC7_patchFirstPostTest" />
+        <item itemvalue="TestNG.TypicodeApiTests.TC8_deleteFirstPostTest" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +297,7 @@
       <updated>1609162762351</updated>
       <workItem from="1609162766808" duration="8183000" />
       <workItem from="1609335665238" duration="5045000" />
-      <workItem from="1609355684117" duration="5070000" />
+      <workItem from="1609355684117" duration="8157000" />
     </task>
     <servers />
   </component>
@@ -227,10 +313,10 @@
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
     <state x="2143" y="70" width="1089" height="733" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609358740497" />
-    <state x="2494" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1609359896346">
+    <state x="2494" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1609362394108">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state x="2494" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609359896346" />
+    <state x="2494" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609362394108" />
     <state x="2418" y="199" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1609164911329">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
@@ -243,38 +329,38 @@
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
     <state x="2468" y="156" key="FileChooserDialogImpl/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609171680436" />
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1609360596173">
+    <state width="1493" height="250" key="GridCell.Tab.0.bottom" timestamp="1609363729916">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609360596173" />
-    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1609360596173">
+    <state width="1493" height="250" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363729916" />
+    <state width="1493" height="250" key="GridCell.Tab.0.center" timestamp="1609363729915">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609360596173" />
-    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1609360596173">
+    <state width="1493" height="250" key="GridCell.Tab.0.center/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363729915" />
+    <state width="1493" height="250" key="GridCell.Tab.0.left" timestamp="1609363729915">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609360596173" />
-    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1609360596173">
+    <state width="1493" height="250" key="GridCell.Tab.0.left/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363729915" />
+    <state width="1493" height="250" key="GridCell.Tab.0.right" timestamp="1609363729916">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609360596173" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1609354598930">
+    <state width="1493" height="250" key="GridCell.Tab.0.right/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363729916" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1609363561474">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609354598930" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1609354598930">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363561474" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1609363561474">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609354598930" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1609354598930">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363561474" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1609363561474">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609354598930" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1609354598930">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363561474" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1609363561474">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609354598930" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609363561474" />
     <state x="2197" y="3" key="SettingsEditor" timestamp="1609358404307">
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
@@ -287,5 +373,9 @@
       <screen x="1920" y="3" width="1536" height="824" />
     </state>
     <state x="2129" y="111" key="new project wizard/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609162811918" />
+    <state x="2345" y="188" key="run.anything.popup" timestamp="1609362052936">
+      <screen x="1920" y="3" width="1536" height="824" />
+    </state>
+    <state x="2345" y="188" key="run.anything.popup/0.0.1536.824/1920.3.1536.824@1920.3.1536.824" timestamp="1609362052936" />
   </component>
 </project>
