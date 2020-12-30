@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class WebDriverS {
+public class WebDriverSingleton {
     private static WebDriver instance;
 
     public static WebDriver getChromeDriver() {

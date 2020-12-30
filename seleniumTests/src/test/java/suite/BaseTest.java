@@ -3,7 +3,7 @@ package suite;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import utils.WebDriverS;
+import utils.WebDriverSingleton;
 
 public class BaseTest {
 
@@ -13,7 +13,7 @@ public class BaseTest {
 
     @BeforeTest
     void setupChromeDriver() {
-        driver = WebDriverS.getChromeDriver();
+        driver = WebDriverSingleton.getChromeDriver();
     }
 
     @AfterTest
