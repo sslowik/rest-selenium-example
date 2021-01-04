@@ -20,11 +20,7 @@ import java.util.Map;
 public class AddItemsTest extends BaseTest {
 
     static Logger logger = Logger.getLogger(AddItemsTest.class);
-
     static final String baseUrl = "http://automationpractice.com/index.php";
-
-    static final int baseWaitInSeconds = 1;
-
     static final String X_POPULAR_TAB = "";
     static final String X_BEST_SELLERS_TAB = "";
 
@@ -50,10 +46,7 @@ public class AddItemsTest extends BaseTest {
 
     @Test(priority = 2, dependsOnMethods = "openUrl")
     void addItemsToBasket() {
-        WebDriverWait waitShort = new WebDriverWait(driver, baseWaitInSeconds);
-        WebDriverWait waitMedium = new WebDriverWait(driver, baseWaitInSeconds * 3);
-        WebDriverWait waitLong = new WebDriverWait(driver, baseWaitInSeconds * 10);
-
+        WebDriverWait waitMedium = new WebDriverWait(driver, 3);
         Reporter.log("Number of Best Selling products: " + bestSellerProducts.size());
         Reporter.log("Number of Popular products: " + popularProducts.size());
 
@@ -79,6 +72,7 @@ public class AddItemsTest extends BaseTest {
             String x_addButtonByProductId = x_popularProductContainer + "//div[@class='button-container']" + "/a[contains(@class, 'ajax_add_to_cart_button') and @data-id-product='%d']/span";
             String x_productPrice = "//body[@id='product']//button[@name='Submit']";
             String x_productName = "//body[@id='product']//button[@name='Submit']";
+
             WebElement addButton = waitMedium.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(x_addButtonByProductId, i + 1))));
             addButton.click();
             String x_continueBtn = "//div[@class='clearfix' and contains(., 'Product successfully added to your shopping cart')]//span[contains(@class, 'btn') and @title='Continue shopping']";
