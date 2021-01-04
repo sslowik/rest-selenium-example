@@ -1,6 +1,5 @@
 package utils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.exec.OS;
 import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -21,25 +21,28 @@ public class WebDriverSingleton {
     }
 
     private static void setupChromeDriver() {
-        BasicConfigurator.configure();
-        WebDriverManager.chromedriver().setup();
+//        BasicConfigurator.configure();  //TODO debug and fix problems with guava methods in WebDriverManager
+//        WebDriverManager.chromedriver().setup();
+//        instance = new ChromeDriver(getChromeOptions());
         instance = new ChromeDriver();
-        instance.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        instance.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        instance.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // version for latest Selenium
+        instance.manage().window().maximize();
     }
 
-    private ChromeOptions getChromeOptions() {
+    private static ChromeOptions getChromeOptions() {
         OS operatingSystem = getOS();
         System.out.println("Operating system: "+ operatingSystem);
 
-        System.setProperty("webdriver.chrome.silentOutput", "true");
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
-        prefs.put("profile.default_content_settings.popups", 0);
-        prefs.put("download.prompt_for_download", "false");
-        prefs.put("behavior", "allow");
-        prefs.put("browser.setDownloadBehavior", "allow");
+//        System.setProperty("webdriver.chrome.silentOutput", "true");
+//        Map<String, Object> prefs = new HashMap<>();
+//        prefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
+//        prefs.put("profile.default_content_settings.popups", 0);
+//        prefs.put("download.prompt_for_download", "false");
+//        prefs.put("behavior", "allow");
+//        prefs.put("browser.setDownloadBehavior", "allow");
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
+//        options.setExperimentalOption("prefs", prefs);
         options.addArguments("--start-maximized");
         return options;
     }
