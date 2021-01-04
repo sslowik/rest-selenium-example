@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -21,13 +22,14 @@ public class WebDriverSingleton {
     }
 
     private static void setupChromeDriver() {
-        BasicConfigurator.configure();
-        WebDriverManager.chromedriver().setup();
-        instance = new ChromeDriver();
-        instance.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//        BasicConfigurator.configure();  //TODO debug and fix problems with guava methods in WebDriverManager
+//        WebDriverManager.chromedriver().setup();
+        instance = new ChromeDriver(getChromeOptions());
+        instance.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        instance.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // version for latest Selenium
     }
 
-    private ChromeOptions getChromeOptions() {
+    private static ChromeOptions getChromeOptions() {
         OS operatingSystem = getOS();
         System.out.println("Operating system: "+ operatingSystem);
 

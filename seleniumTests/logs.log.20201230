@@ -1,0 +1,8 @@
+ INFO 2020/12/30 23:19:09 (WebDriverManager.java:605) === Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+ INFO 2020/12/30 23:19:09 (WebDriverManager.java:661) === Exporting webdriver.chrome.driver as C:\Users\slawo\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
+ INFO 2020/12/30 23:22:01 (WebDriverManager.java:605) === Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+ INFO 2020/12/30 23:22:01 (WebDriverManager.java:661) === Exporting webdriver.chrome.driver as C:\Users\slawo\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
+ INFO 2020/12/30 23:23:10 (WebDriverManager.java:605) === Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+ INFO 2020/12/30 23:23:10 (WebDriverManager.java:661) === Exporting webdriver.chrome.driver as C:\Users\slawo\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
+ INFO 2020/12/30 23:49:38 (WebDriverManager.java:605) === Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+ INFO 2020/12/30 23:49:38 (WebDriverManager.java:661) === Exporting webdriver.chrome.driver as C:\Users\slawo\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
