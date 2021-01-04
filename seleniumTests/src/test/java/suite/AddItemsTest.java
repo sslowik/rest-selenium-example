@@ -46,7 +46,7 @@ public class AddItemsTest extends BaseTest {
 
     @Test(priority = 2, dependsOnMethods = "openUrl")
     void addItemsToBasket() {
-        WebDriverWait waitMedium = new WebDriverWait(driver, 3);
+        WebDriverWait waitMedium = new WebDriverWait(driver, 5);
         //given
         String x_shopping_cart = "//div[@class='shopping_cart']/a";
         String x_products_quantity = x_shopping_cart + "/span[contains(@class, 'ajax_cart_quantity')]";

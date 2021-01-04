@@ -10,4 +10,8 @@
             </class>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+        <listener class-name="org.testng.reporters.FailedReporter"/>
+    </listeners>
 </suite>
